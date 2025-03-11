@@ -10,7 +10,7 @@ import pyautogui
 from pywinauto import Application
 
 # Define file paths
-ltspice_path = r"C:\Users\leegj\AppData\Local\Programs\ADI\LTspice\LTspice.exe"
+ltspice_path = r"C:\Users\vleou\AppData\Local\Programs\ADI\LTspice\LTspice.exe"
 
 def circuit_saver(original_asc_file, new_window = True):
     base_output_dir = os.path.join(os.getcwd(), "data", "output")

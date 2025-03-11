@@ -5,7 +5,7 @@ from PyQt5.QtWidgets import (
 from PyQt5.QtCore import Qt
 from PyQt5.QtGui import QFont, QPixmap
 
-ltspice_path = r"C:\Users\leegj\AppData\Local\Programs\ADI\LTspice\LTspice.exe"
+ltspice_path = r"C:\Users\vleou\AppData\Local\Programs\ADI\LTspice\LTspice.exe"
 
 class MiddlePanel(QFrame):
     """
@@ -153,11 +153,14 @@ class MiddlePanel(QFrame):
             return
 
         print("🔹 LTSpice opened. Monitoring for exit...")
-
+        
+        initial_len = len(gw.getWindowsWithTitle("LTspice"))
+        print(f"initial windows: {gw.getWindowsWithTitle("LTspice")}")
         # Monitor for "Save changes?" pop-up
         while ltspice_process.poll() is None:
             time.sleep(0.5)
             windows = gw.getWindowsWithTitle("LTspice")
+            print(windows)
             if len(windows) > 1:
                 print("🔹 Detected LTSpice save pop-up. Pressing 'Cancel'...")
                 time.sleep(0.5)

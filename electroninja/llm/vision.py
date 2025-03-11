@@ -11,7 +11,7 @@ class VisionManager:
     Manages vision-based interactions with an OpenAI model that supports image inputs.
     Used to check if a generated circuit image (PNG) matches the user's request.
     """
-    def __init__(self, model: str = "gpt-4o-mini"):
+    def __init__(self, model: str = "gpt-4o"):
         self.model = model
 
     def analyze_circuit_image(self, image_path: str, user_request: str, detail: str = "high") -> str:
